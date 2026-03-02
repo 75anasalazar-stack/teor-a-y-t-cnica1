@@ -2,137 +2,315 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Mapa Mental - Bibliografía (Corrientes y Tipologías)</title>
+<title>Mapa Mental - Bibliografía</title>
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f6f9;
-        margin: 40px;
-    }
-    h1 {
-        text-align: center;
-    }
-    ul {
-        list-style-type: none;
-    }
-    li {
-        margin: 6px 0;
-    }
-    .nivel1 { font-weight: bold; font-size: 18px; margin-top: 15px; }
-    .nivel2 { margin-left: 20px; }
-    .nivel3 { margin-left: 40px; }
-    .nivel4 { margin-left: 60px; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  h1 { text-align:center; color:#fff; padding:28px 20px 6px; font-size:1.8rem; letter-spacing:2px; text-shadow:0 0 20px rgba(120,100,255,.8); }
+  .sub { text-align:center; color:rgba(255,255,255,.5); font-size:.85rem; margin-bottom:20px; }
+  svg { overflow:visible; display:block; margin:0 auto; }
+  .pulse ellipse { animation: glow 2.5s infinite; }
+  @keyframes glow { 0%,100%{filter:drop-shadow(0 0 10px #7c3aed)} 50%{filter:drop-shadow(0 0 25px #a78bfa)} }
+  .branch { cursor:pointer; transition:transform .2s; }
+  .branch:hover { transform-origin:center; }
+  .tooltip { position:fixed; background:rgba(10,8,30,.95); border:1px solid rgba(255,255,255,.2); border-radius:10px; padding:9px 13px; color:#fff; font-size:.78rem; pointer-events:none; opacity:0; transition:opacity .2s; max-width:240px; z-index:100; }
+  .legend { display:flex; justify-content:center; gap:18px; flex-wrap:wrap; padding:14px 20px 28px; }
+  .li { display:flex; align-items:center; gap:7px; color:rgba(255,255,255,.7); font-size:.78rem; }
+  .ld { width:13px; height:13px; border-radius:3px; }
+  .author-badge { text-align:center; color:rgba(255,255,255,.35); font-size:.72rem; padding-bottom:6px; letter-spacing:1px; }
 </style>
 </head>
 <body>
+<h1>🧠 Mapa Mental — Bibliografía</h1>
+<p class="sub">Corrientes · Postulados · Tipologías &nbsp;|&nbsp; Haz clic en una rama para resaltarla</p>
+<p class="author-badge">Basado en Catalina Naumis Peña (2008) y corrientes doctrinales clásicas</p>
 
-<h1>🧠 Bibliografía: Corrientes, Postulados y Tipologías</h1>
+<svg id="mm" width="1200" height="1100" viewBox="0 0 1200 1100">
+<defs>
+  <filter id="glow1"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
 
-<ul>
+<!-- ===== CONNECTIONS center to 8 branches ===== -->
+<!-- Top 4 -->
+<path fill="none" stroke="#60a5fa" stroke-width="2.5" opacity=".7" d="M560,490 Q430,380 310,330"/>
+<path fill="none" stroke="#34d399" stroke-width="2.5" opacity=".7" d="M560,490 Q490,360 440,290"/>
+<path fill="none" stroke="#fbbf24" stroke-width="2.5" opacity=".7" d="M650,490 Q720,360 770,290"/>
+<path fill="none" stroke="#f472b6" stroke-width="2.5" opacity=".7" d="M650,490 Q790,380 890,330"/>
+<!-- Bottom 4 -->
+<path fill="none" stroke="#a78bfa" stroke-width="2.5" opacity=".7" d="M560,530 Q430,640 310,690"/>
+<path fill="none" stroke="#fb923c" stroke-width="2.5" opacity=".7" d="M560,530 Q490,660 440,730"/>
+<path fill="none" stroke="#22d3ee" stroke-width="2.5" opacity=".7" d="M650,530 Q720,660 770,730"/>
+<path fill="none" stroke="#86efac" stroke-width="2.5" opacity=".7" d="M650,530 Q790,640 890,690"/>
 
-<li class="nivel1">1️⃣ Corriente Anglosajona (Bibliografía Tipográfica)</li>
-<ul>
-<li class="nivel2">📍 Origen
-    <ul>
-        <li class="nivel3">Inglaterra</li>
-        <li class="nivel3">Siglo XVIII</li>
-        <li class="nivel3">Practicada por bibliotecarios y libreros</li>
-    </ul>
-</li>
-<li class="nivel2">📖 Postulado: “Ciencia del Libro”</li>
-<li class="nivel2">📚 Objeto: Libros antiguos e incunables (siglo XV)</li>
-<li class="nivel2">🔎 Enfoque integral: histórico, descriptivo, analítico, catalográfico e histórico-literario</li>
-<li class="nivel2">🔄 Vigente y perfeccionada en países angloparlantes</li>
-</ul>
+<!-- B1 leaf lines (Anglosajona) -->
+<path fill="none" stroke="#93c5fd" stroke-width="1.5" opacity=".5" d="M245,315 Q185,270 155,248"/>
+<path fill="none" stroke="#93c5fd" stroke-width="1.5" opacity=".5" d="M245,330 Q185,330 155,330"/>
+<path fill="none" stroke="#93c5fd" stroke-width="1.5" opacity=".5" d="M245,345 Q185,390 155,405"/>
+<path fill="none" stroke="#93c5fd" stroke-width="1.5" opacity=".5" d="M245,348 Q185,455 155,465"/>
 
-<li class="nivel1">2️⃣ Corriente Tradicional o Europeo-Continental</li>
-<ul>
-<li class="nivel2">📍 Antecedente: Gabriel Peignot (1802)</li>
-<li class="nivel2">📖 Postulado: “Ciencia de los Repertorios”</li>
-<li class="nivel2">🏗 Distingue:
-    <ul>
-        <li class="nivel3">Bibliología → Ciencia general del libro</li>
-        <li class="nivel3">Bibliografía → Estudio y elaboración de repertorios</li>
-    </ul>
-</li>
-<li class="nivel2">📋 Ámbito: listas de libros, estructura, finalidad, uso y metodología</li>
-<li class="nivel2">🛠 Función instrumental (Louise Noëlle Malclès): crear instrumentos para el trabajo intelectual</li>
-</ul>
+<!-- B2 leaf lines (Alemana) -->
+<path fill="none" stroke="#86efac" stroke-width="1.5" opacity=".5" d="M415,270 Q380,215 360,195"/>
+<path fill="none" stroke="#86efac" stroke-width="1.5" opacity=".5" d="M415,278 Q370,260 335,260"/>
+<path fill="none" stroke="#86efac" stroke-width="1.5" opacity=".5" d="M415,285 Q370,320 335,340"/>
 
-<li class="nivel1">3️⃣ Corrientes según Catalina Naumis Peña (2008)</li>
+<!-- B3 leaf lines (Norteamericana) -->
+<path fill="none" stroke="#fde68a" stroke-width="1.5" opacity=".5" d="M795,270 Q830,215 855,195"/>
+<path fill="none" stroke="#fde68a" stroke-width="1.5" opacity=".5" d="M795,278 Q840,260 870,260"/>
+<path fill="none" stroke="#fde68a" stroke-width="1.5" opacity=".5" d="M795,285 Q840,320 870,340"/>
 
-<ul>
-<li class="nivel2">📘 Corriente Inglesa (Material/Tipográfica)
-    <ul>
-        <li class="nivel3">Autores: Greg, Cowley, Besterman, Bowers</li>
-        <li class="nivel3">Postulado: Ciencia del libro</li>
-        <li class="nivel3">Estudia el libro como objeto físico</li>
-        <li class="nivel3">Busca determinar versiones fieles de los textos</li>
-        <li class="nivel3">Perspectiva histórica, descriptiva, analítica, crítica y catalográfica</li>
-    </ul>
-</li>
+<!-- B4 leaf lines (Científica/Universalista) -->
+<path fill="none" stroke="#fda4af" stroke-width="1.5" opacity=".5" d="M955,315 Q1020,270 1050,248"/>
+<path fill="none" stroke="#fda4af" stroke-width="1.5" opacity=".5" d="M955,330 Q1020,330 1050,330"/>
+<path fill="none" stroke="#fda4af" stroke-width="1.5" opacity=".5" d="M955,345 Q1020,390 1050,405"/>
 
-<li class="nivel2">📗 Corriente Alemana (Bibliografía Sistemática)
-    <ul>
-        <li class="nivel3">Base de compilaciones bibliográficas modernas</li>
-        <li class="nivel3">Influyó en el movimiento industrial estadounidense</li>
-        <li class="nivel3">Postulado: organización y registro metódico de obras</li>
-        <li class="nivel3">Fundamento doctrinal de repertorios modernos</li>
-        <li class="nivel3">Conocimiento de textos impresos para crear instrumentos de trabajo intelectual</li>
-    </ul>
-</li>
+<!-- B5 leaf lines (Postulados Generales) -->
+<path fill="none" stroke="#c4b5fd" stroke-width="1.5" opacity=".5" d="M245,705 Q185,660 155,645"/>
+<path fill="none" stroke="#c4b5fd" stroke-width="1.5" opacity=".5" d="M245,712 Q185,712 155,712"/>
+<path fill="none" stroke="#c4b5fd" stroke-width="1.5" opacity=".5" d="M245,720 Q185,760 155,775"/>
+<path fill="none" stroke="#c4b5fd" stroke-width="1.5" opacity=".5" d="M245,725 Q185,820 155,835"/>
 
-<li class="nivel2">📙 Corriente Norteamericana
-    <ul>
-        <li class="nivel3">Autores: Harmon y Krummel</li>
-        <li class="nivel3">Divide en:
-            <ul>
-                <li class="nivel4">Bibliografía analítica o crítica → estudia recursos como objetos materiales</li>
-                <li class="nivel4">Bibliografía enumerativa o sistemática → estudia recursos como entidades intelectuales organizadas</li>
-            </ul>
-        </li>
-    </ul>
-</li>
+<!-- B6 leaf lines (Bib. Descriptiva) -->
+<path fill="none" stroke="#fdba74" stroke-width="1.5" opacity=".5" d="M415,748 Q370,710 335,695"/>
+<path fill="none" stroke="#fdba74" stroke-width="1.5" opacity=".5" d="M415,755 Q370,755 335,755"/>
 
-<li class="nivel2">🌍 Corriente Científica y Universalista
-    <ul>
-        <li class="nivel3">Impulsada por Paul Otlet y Henri La Fontaine</li>
-        <li class="nivel3">Propone bibliografía científica y universal</li>
-        <li class="nivel3">Objetivo: control total de la producción editorial mundial</li>
-        <li class="nivel3">Proyecto: Repertorio Bibliográfico Universal</li>
-        <li class="nivel3">Promueve cooperación internacional</li>
-    </ul>
-</li>
+<!-- B7 leaf lines (Bib. Analítica) -->
+<path fill="none" stroke="#67e8f9" stroke-width="1.5" opacity=".5" d="M795,748 Q840,710 870,695"/>
+<path fill="none" stroke="#67e8f9" stroke-width="1.5" opacity=".5" d="M795,755 Q840,755 870,755"/>
+<path fill="none" stroke="#67e8f9" stroke-width="1.5" opacity=".5" d="M795,762 Q840,800 870,815"/>
 
-<li class="nivel2">💻 Convergencia en el siglo XXI
-    <ul>
-        <li class="nivel3">Visión holística y digital</li>
-        <li class="nivel3">Integración con la Documentación</li>
-        <li class="nivel3">Gestión de recuperación de información en nuevos soportes</li>
-    </ul>
-</li>
+<!-- B8 leaf lines (s.XXI Naumis) -->
+<path fill="none" stroke="#bbf7d0" stroke-width="1.5" opacity=".5" d="M955,705 Q1020,660 1050,645"/>
+<path fill="none" stroke="#bbf7d0" stroke-width="1.5" opacity=".5" d="M955,712 Q1020,712 1050,712"/>
+<path fill="none" stroke="#bbf7d0" stroke-width="1.5" opacity=".5" d="M955,720 Q1020,760 1050,775"/>
 
-</ul>
+<!-- ===== CENTER ===== -->
+<g class="pulse">
+  <ellipse cx="605" cy="510" rx="82" ry="55" fill="#7c3aed" stroke="#a78bfa" stroke-width="3" filter="url(#glow1)"/>
+  <text x="605" y="500" text-anchor="middle" font-size="20" fill="white">📚</text>
+  <text x="605" y="518" text-anchor="middle" font-size="12" fill="white" font-weight="bold">BIBLIO-</text>
+  <text x="605" y="534" text-anchor="middle" font-size="12" fill="white" font-weight="bold">GRAFÍA</text>
+</g>
 
-<li class="nivel1">4️⃣ Postulados Generales de una Buena Bibliografía</li>
-<ul>
-<li class="nivel2">✔ Precisión y exhaustividad</li>
-<li class="nivel2">✔ Sin repeticiones</li>
-<li class="nivel2">✔ Buena organización para consulta</li>
-<li class="nivel2">✔ Sentido crítico del bibliógrafo</li>
-<li class="nivel2">✔ Objetivos: registrar producción científica, verificar datos e informar nuevas obras</li>
-</ul>
+<!-- ===== BRANCH 1: Corriente Inglesa (Anglosajona) ===== -->
+<g class="branch" id="b1n" data-tip="Naumis Peña (2008): Representada por Greg, Cowley, Besterman y Bowers. Define la bibliografía como la 'ciencia del libro'. Se centra en el libro como objeto físico para determinar la versión más fiel de un texto.">
+  <rect x="165" y="300" width="165" height="60" rx="12" fill="#1d4ed8" stroke="#60a5fa" stroke-width="2" filter="url(#glow1)"/>
+  <text x="247" y="322" text-anchor="middle" font-size="9.5" fill="white">1️⃣ Corriente Inglesa</text>
+  <text x="247" y="337" text-anchor="middle" font-size="11" fill="white" font-weight="bold">Anglosajona</text>
+  <text x="247" y="351" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Bib. Material / Tipográfica</text>
+</g>
+<g id="b1l">
+  <rect x="5" y="230" width="148" height="36" rx="8" fill="#1e3a8a" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="79" y="246" text-anchor="middle" font-size="9" fill="white">👤 Greg · Cowley</text>
+  <text x="79" y="259" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Besterman · Bowers</text>
 
-<li class="nivel1">5️⃣ Principales Tipologías Bibliográficas</li>
-<ul>
-<li class="nivel2">📘 Descriptiva → características materiales y variantes</li>
-<li class="nivel2">📙 Analítica → resumen, palabras clave y datos materiales</li>
-<li class="nivel2">📕 Crítica → juicios de valor</li>
-<li class="nivel2">🌎 Nacional → producción de un país</li>
-<li class="nivel2">🌍 Universal → todas las obras del mundo sin límites</li>
-</ul>
+  <rect x="5" y="312" width="148" height="36" rx="8" fill="#1e3a8a" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="79" y="327" text-anchor="middle" font-size="9.5" fill="white">📖 "Ciencia del Libro"</text>
+  <text x="79" y="340" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Postulado principal</text>
 
-</ul>
+  <rect x="5" y="387" width="148" height="36" rx="8" fill="#1e3a8a" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="79" y="402" text-anchor="middle" font-size="9.5" fill="white">🔎 Histórica · Descriptiva</text>
+  <text x="79" y="415" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Analítica · Catalográfica</text>
 
+  <rect x="5" y="447" width="148" height="36" rx="8" fill="#1e3a8a" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="79" y="462" text-anchor="middle" font-size="9.5" fill="white">📜 Libro como objeto físico</text>
+  <text x="79" y="475" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Versión más fiel del texto</text>
+</g>
+
+<!-- ===== BRANCH 2: Corriente Alemana ===== -->
+<g class="branch" id="b2n" data-tip="Naumis Peña (2008): Corriente Alemana (Bibliografía Sistemática). Base del movimiento industrial en EE.UU. Malclès la retoma: la bibliografía como 'instrumentos de trabajo intelectual'.">
+  <rect x="325" y="245" width="165" height="60" rx="12" fill="#065f46" stroke="#34d399" stroke-width="2" filter="url(#glow1)"/>
+  <text x="407" y="267" text-anchor="middle" font-size="9.5" fill="white">2️⃣ Corriente Alemana</text>
+  <text x="407" y="282" text-anchor="middle" font-size="11" fill="white" font-weight="bold">Sistemática</text>
+  <text x="407" y="296" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Base repertorios modernos</text>
+</g>
+<g id="b2l">
+  <rect x="220" y="177" width="148" height="36" rx="8" fill="#064e3b" stroke="#6ee7b7" stroke-width="1.5"/>
+  <text x="294" y="192" text-anchor="middle" font-size="9.5" fill="white">🏭 Base movimiento</text>
+  <text x="294" y="205" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">industrial en EE.UU.</text>
+
+  <rect x="200" y="243" width="148" height="36" rx="8" fill="#064e3b" stroke="#6ee7b7" stroke-width="1.5"/>
+  <text x="274" y="258" text-anchor="middle" font-size="9.5" fill="white">📋 Organización y registro</text>
+  <text x="274" y="271" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">metódico de obras</text>
+
+  <rect x="200" y="322" width="148" height="36" rx="8" fill="#064e3b" stroke="#6ee7b7" stroke-width="1.5"/>
+  <text x="274" y="337" text-anchor="middle" font-size="9.5" fill="white">🛠 Malclès: "instrumentos</text>
+  <text x="274" y="350" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">de trabajo intelectual"</text>
+</g>
+
+<!-- ===== BRANCH 3: Corriente Norteamericana ===== -->
+<g class="branch" id="b3n" data-tip="Naumis Peña (2008): Harmon y Krummel. Divide en bibliografía analítica/crítica (libro como entidad física) y enumerativa/sistemática (entidad intelectual organizada lógicamente).">
+  <rect x="715" y="245" width="165" height="60" rx="12" fill="#92400e" stroke="#fbbf24" stroke-width="2" filter="url(#glow1)"/>
+  <text x="797" y="267" text-anchor="middle" font-size="9.5" fill="white">3️⃣ Corriente</text>
+  <text x="797" y="282" text-anchor="middle" font-size="11" fill="white" font-weight="bold">Norteamericana</text>
+  <text x="797" y="296" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Harmon · Krummel</text>
+</g>
+<g id="b3l">
+  <rect x="840" y="177" width="148" height="36" rx="8" fill="#78350f" stroke="#fcd34d" stroke-width="1.5"/>
+  <text x="914" y="192" text-anchor="middle" font-size="9.5" fill="white">📘 Bib. Analítica / Crítica</text>
+  <text x="914" y="205" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Libro como entidad física</text>
+
+  <rect x="860" y="243" width="148" height="36" rx="8" fill="#78350f" stroke="#fcd34d" stroke-width="1.5"/>
+  <text x="934" y="258" text-anchor="middle" font-size="9.5" fill="white">📗 Bib. Enumerativa</text>
+  <text x="934" y="271" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Entidad intelectual lógica</text>
+
+  <rect x="860" y="322" width="148" height="36" rx="8" fill="#78350f" stroke="#fcd34d" stroke-width="1.5"/>
+  <text x="934" y="337" text-anchor="middle" font-size="9.5" fill="white">✂ Dos grandes ramas</text>
+  <text x="934" y="350" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">de la disciplina</text>
+</g>
+
+<!-- ===== BRANCH 4: Corriente Científica/Universalista ===== -->
+<g class="branch" id="b4n" data-tip="Naumis Peña (2008): Paul Otlet y Henri La Fontaine (fines s.XIX). Bibliografía científica y universal. Repertorio Bibliográfico Universal. Cooperación internacional para unificar el registro de información.">
+  <rect x="870" y="300" width="165" height="60" rx="12" fill="#831843" stroke="#f472b6" stroke-width="2" filter="url(#glow1)"/>
+  <text x="952" y="320" text-anchor="middle" font-size="9.5" fill="white">4️⃣ Corriente Científica</text>
+  <text x="952" y="335" text-anchor="middle" font-size="11" fill="white" font-weight="bold">Universalista</text>
+  <text x="952" y="349" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Otlet · La Fontaine</text>
+</g>
+<g id="b4l">
+  <rect x="1035" y="230" width="148" height="36" rx="8" fill="#701a40" stroke="#fb7185" stroke-width="1.5"/>
+  <text x="1109" y="245" text-anchor="middle" font-size="9.5" fill="white">🌍 Bib. Universal</text>
+  <text x="1109" y="258" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Control editorial mundial</text>
+
+  <rect x="1035" y="312" width="148" height="36" rx="8" fill="#701a40" stroke="#fb7185" stroke-width="1.5"/>
+  <text x="1109" y="327" text-anchor="middle" font-size="9.5" fill="white">🤝 Cooperación internacional</text>
+  <text x="1109" y="340" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Unificar registro info</text>
+
+  <rect x="1035" y="387" width="148" height="36" rx="8" fill="#701a40" stroke="#fb7185" stroke-width="1.5"/>
+  <text x="1109" y="402" text-anchor="middle" font-size="9.5" fill="white">📑 Repertorio Bib.</text>
+  <text x="1109" y="415" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Universal (RBU)</text>
+</g>
+
+<!-- ===== BRANCH 5: Postulados Generales ===== -->
+<g class="branch" id="b5n" data-tip="Una buena bibliografía debe ser precisa, exhaustiva, sin repeticiones, bien organizada y con sentido crítico del bibliógrafo.">
+  <rect x="165" y="675" width="165" height="60" rx="12" fill="#4c1d95" stroke="#a78bfa" stroke-width="2" filter="url(#glow1)"/>
+  <text x="247" y="697" text-anchor="middle" font-size="9.5" fill="white">5️⃣ Postulados</text>
+  <text x="247" y="712" text-anchor="middle" font-size="11" fill="white" font-weight="bold">Generales</text>
+  <text x="247" y="726" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Buena Bibliografía</text>
+</g>
+<g id="b5l">
+  <rect x="5" y="627" width="148" height="36" rx="8" fill="#3b0764" stroke="#c4b5fd" stroke-width="1.5"/>
+  <text x="79" y="642" text-anchor="middle" font-size="9.5" fill="white">✔ Precisión · Exhaustividad</text>
+  <text x="79" y="655" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Sin repeticiones</text>
+
+  <rect x="5" y="694" width="148" height="36" rx="8" fill="#3b0764" stroke="#c4b5fd" stroke-width="1.5"/>
+  <text x="79" y="709" text-anchor="middle" font-size="9.5" fill="white">✔ Sentido crítico</text>
+  <text x="79" y="722" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">del bibliógrafo</text>
+
+  <rect x="5" y="757" width="148" height="36" rx="8" fill="#3b0764" stroke="#c4b5fd" stroke-width="1.5"/>
+  <text x="79" y="772" text-anchor="middle" font-size="9.5" fill="white">🎯 Registrar · Verificar</text>
+  <text x="79" y="785" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Informar nuevas obras</text>
+
+  <rect x="5" y="817" width="148" height="36" rx="8" fill="#3b0764" stroke="#c4b5fd" stroke-width="1.5"/>
+  <text x="79" y="832" text-anchor="middle" font-size="9.5" fill="white">🗂 Buena organización</text>
+  <text x="79" y="845" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">para consulta</text>
+</g>
+
+<!-- ===== BRANCH 6: Bibliografía Descriptiva ===== -->
+<g class="branch" id="b6n" data-tip="Bibliografía Descriptiva: registro de características materiales del libro. Fundamental para fondos antiguos e identificación de variantes. Base de la corriente inglesa (libro como objeto físico).">
+  <rect x="325" y="720" width="165" height="60" rx="12" fill="#7c2d12" stroke="#fb923c" stroke-width="2" filter="url(#glow1)"/>
+  <text x="407" y="742" text-anchor="middle" font-size="9.5" fill="white">6️⃣ Tipología:</text>
+  <text x="407" y="757" text-anchor="middle" font-size="11" fill="white" font-weight="bold">Bib. Descriptiva</text>
+  <text x="407" y="771" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Características físicas</text>
+</g>
+<g id="b6l">
+  <rect x="162" y="677" width="148" height="36" rx="8" fill="#431407" stroke="#fdba74" stroke-width="1.5"/>
+  <text x="236" y="692" text-anchor="middle" font-size="9.5" fill="white">📦 Materia · papel</text>
+  <text x="236" y="705" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">filigranas · tipografía</text>
+
+  <rect x="162" y="737" width="148" height="36" rx="8" fill="#431407" stroke="#fdba74" stroke-width="1.5"/>
+  <text x="236" y="752" text-anchor="middle" font-size="9.5" fill="white">🔍 Genealogía y variantes</text>
+  <text x="236" y="765" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Fondos antiguos</text>
+</g>
+
+<!-- ===== BRANCH 7: Bibliografía Analítica/Crítica ===== -->
+<g class="branch" id="b7n" data-tip="Bibliografía Analítica (Naumis Peña): incluye resumen de contenido, palabras clave. Bibliografía Crítica: añade juicios de valor y comentarios. Ambas estudian el recurso como entidad intelectual (corriente norteamericana).">
+  <rect x="715" y="720" width="165" height="60" rx="12" fill="#164e63" stroke="#22d3ee" stroke-width="2" filter="url(#glow1)"/>
+  <text x="797" y="742" text-anchor="middle" font-size="9.5" fill="white">7️⃣ Tipología:</text>
+  <text x="797" y="757" text-anchor="middle" font-size="11" fill="white" font-weight="bold">Bib. Analítica · Crítica</text>
+  <text x="797" y="771" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Entidad intelectual</text>
+</g>
+<g id="b7l">
+  <rect x="862" y="677" width="148" height="36" rx="8" fill="#083344" stroke="#67e8f9" stroke-width="1.5"/>
+  <text x="936" y="692" text-anchor="middle" font-size="9.5" fill="white">📙 Analítica: resumen</text>
+  <text x="936" y="705" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">+ palabras clave</text>
+
+  <rect x="862" y="737" width="148" height="36" rx="8" fill="#083344" stroke="#67e8f9" stroke-width="1.5"/>
+  <text x="936" y="752" text-anchor="middle" font-size="9.5" fill="white">📕 Crítica: juicios</text>
+  <text x="936" y="765" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">de valor y comentarios</text>
+
+  <rect x="862" y="797" width="148" height="36" rx="8" fill="#083344" stroke="#67e8f9" stroke-width="1.5"/>
+  <text x="936" y="812" text-anchor="middle" font-size="9.5" fill="white">📗 Enumerativa/Sistemática</text>
+  <text x="936" y="825" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Organización lógica</text>
+</g>
+
+<!-- ===== BRANCH 8: s.XXI Naumis Peña ===== -->
+<g class="branch" id="b8n" data-tip="Naumis Peña (2008): En el s.XXI las corrientes convergen hacia una visión holística y digital. La bibliografía se integra con la Documentación para gestionar la recuperación de información en nuevos soportes.">
+  <rect x="870" y="675" width="165" height="60" rx="12" fill="#14532d" stroke="#86efac" stroke-width="2" filter="url(#glow1)"/>
+  <text x="952" y="695" text-anchor="middle" font-size="9.5" fill="white">8️⃣ Visión s.XXI</text>
+  <text x="952" y="710" text-anchor="middle" font-size="11" fill="white" font-weight="bold">Naumis Peña (2008)</text>
+  <text x="952" y="724" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Convergencia Digital</text>
+</g>
+<g id="b8l">
+  <rect x="1035" y="627" width="148" height="36" rx="8" fill="#052e16" stroke="#bbf7d0" stroke-width="1.5"/>
+  <text x="1109" y="642" text-anchor="middle" font-size="9.5" fill="white">🔗 Convergencia corrientes</text>
+  <text x="1109" y="655" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">visión holística</text>
+
+  <rect x="1035" y="694" width="148" height="36" rx="8" fill="#052e16" stroke="#bbf7d0" stroke-width="1.5"/>
+  <text x="1109" y="709" text-anchor="middle" font-size="9.5" fill="white">💻 Integración con</text>
+  <text x="1109" y="722" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Documentación digital</text>
+
+  <rect x="1035" y="757" width="148" height="36" rx="8" fill="#052e16" stroke="#bbf7d0" stroke-width="1.5"/>
+  <text x="1109" y="772" text-anchor="middle" font-size="9.5" fill="white">🗄 Recuperación info</text>
+  <text x="1109" y="785" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">en nuevos soportes</text>
+</g>
+
+</svg>
+
+<div class="legend">
+  <div class="li"><div class="ld" style="background:#1d4ed8"></div>Corriente Inglesa</div>
+  <div class="li"><div class="ld" style="background:#065f46"></div>Corriente Alemana</div>
+  <div class="li"><div class="ld" style="background:#92400e"></div>Corriente Norteamericana</div>
+  <div class="li"><div class="ld" style="background:#831843"></div>Corriente Universalista</div>
+  <div class="li"><div class="ld" style="background:#4c1d95"></div>Postulados Generales</div>
+  <div class="li"><div class="ld" style="background:#7c2d12"></div>Bib. Descriptiva</div>
+  <div class="li"><div class="ld" style="background:#164e63"></div>Bib. Analítica · Crítica</div>
+  <div class="li"><div class="ld" style="background:#14532d"></div>Visión s.XXI (Naumis Peña)</div>
+</div>
+
+<div class="tooltip" id="tip"></div>
+
+<script>
+  const branches = ['b1n','b2n','b3n','b4n','b5n','b6n','b7n','b8n'];
+  const state = {};
+  branches.forEach(id => {
+    state[id] = true;
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('mouseenter', e => {
+      const tip = document.getElementById('tip');
+      tip.textContent = el.dataset.tip;
+      tip.style.opacity = '1';
+    });
+    el.addEventListener('mousemove', e => {
+      const tip = document.getElementById('tip');
+      tip.style.left = (e.clientX+15)+'px';
+      tip.style.top = (e.clientY-10)+'px';
+    });
+    el.addEventListener('mouseleave', () => {
+      document.getElementById('tip').style.opacity = '0';
+    });
+    el.addEventListener('click', () => {
+      const lId = id.replace('n','l');
+      const leaves = document.getElementById(lId);
+      if (!leaves) return;
+      state[id] = !state[id];
+      leaves.style.opacity = state[id] ? '1' : '0.15';
+      leaves.style.transition = 'opacity 0.3s';
+    });
+  });
+</script>
 </body>
 </html>
