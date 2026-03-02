@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Mapa Mental - Bibliografía</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  h1 { text-align:center; color:#fff; padding:28px 20px 6px; font-size:1.8rem; letter-spacing:2px; text-shadow:0 0 20px rgba(120,100,255,.8); }
+  .sub { text-align:center; color:rgba(255,255,255,.5); font-size:.85rem; margin-bottom:20px; }
+  svg { overflow:visible; display:block; margin:0 auto; }
+  .pulse ellipse { animation: glow 2.5s infinite; }
+  @keyframes glow { 0%,100%{filter:drop-shadow(0 0 10px #7c3aed)} 50%{filter:drop-shadow(0 0 25px #a78bfa)} }
+  .branch { cursor:pointer; transition:transform .2s; }
+  .branch:hover { transform-origin:center; }
+  .tooltip { position:fixed; background:rgba(10,8,30,.95); border:1px solid rgba(255,255,255,.2); border-radius:10px; padding:9px 13px; color:#fff; font-size:.78rem; pointer-events:none; opacity:0; transition:opacity .2s; max-width:210px; z-index:100; }
+  .legend { display:flex; justify-content:center; gap:18px; flex-wrap:wrap; padding:14px 20px 28px; }
+  .li { display:flex; align-items:center; gap:7px; color:rgba(255,255,255,.7); font-size:.78rem; }
+  .ld { width:13px; height:13px; border-radius:3px; }
+</style>
+</head>
+<body>
+<h1>🧠 Mapa Mental — Bibliografía</h1>
+<p class="sub">Corrientes · Postulados · Tipologías &nbsp;|&nbsp; Haz clic en una rama para resaltarla</p>
+
+<svg id="mm" width="1100" height="800" viewBox="0 0 1100 800">
+<defs>
+  <filter id="glow1"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+
+<!-- CONNECTIONS center to branches -->
+<path fill="none" stroke="#60a5fa" stroke-width="2.5" opacity=".7" d="M490,370 Q380,265 300,235"/>
+<path fill="none" stroke="#34d399" stroke-width="2.5" opacity=".7" d="M490,430 Q380,530 300,555"/>
+<path fill="none" stroke="#fbbf24" stroke-width="2.5" opacity=".7" d="M620,370 Q730,265 800,235"/>
+<path fill="none" stroke="#f472b6" stroke-width="2.5" opacity=".7" d="M620,430 Q730,530 800,555"/>
+
+<!-- B1 leaf lines -->
+<path fill="none" stroke="#93c5fd" stroke-width="1.5" opacity=".6" d="M235,215 Q185,170 155,148"/>
+<path fill="none" stroke="#93c5fd" stroke-width="1.5" opacity=".6" d="M235,230 Q185,230 155,230"/>
+<path fill="none" stroke="#93c5fd" stroke-width="1.5" opacity=".6" d="M235,250 Q185,290 155,305"/>
+<path fill="none" stroke="#93c5fd" stroke-width="1.5" opacity=".6" d="M235,255 Q185,370 155,385"/>
+<path fill="none" stroke="#93c5fd" stroke-width="1.5" opacity=".6" d="M235,255 Q185,435 155,445"/>
+
+<!-- B2 leaf lines -->
+<path fill="none" stroke="#6ee7b7" stroke-width="1.5" opacity=".6" d="M235,535 Q185,495 155,480"/>
+<path fill="none" stroke="#6ee7b7" stroke-width="1.5" opacity=".6" d="M235,555 Q185,555 155,555"/>
+<path fill="none" stroke="#6ee7b7" stroke-width="1.5" opacity=".6" d="M235,570 Q185,610 155,625"/>
+<path fill="none" stroke="#6ee7b7" stroke-width="1.5" opacity=".6" d="M235,575 Q185,665 155,680"/>
+
+<!-- B3 leaf lines -->
+<path fill="none" stroke="#fcd34d" stroke-width="1.5" opacity=".6" d="M870,215 Q920,170 950,148"/>
+<path fill="none" stroke="#fcd34d" stroke-width="1.5" opacity=".6" d="M870,230 Q920,230 950,230"/>
+<path fill="none" stroke="#fcd34d" stroke-width="1.5" opacity=".6" d="M870,250 Q920,290 950,305"/>
+<path fill="none" stroke="#fcd34d" stroke-width="1.5" opacity=".6" d="M870,255 Q920,370 950,385"/>
+
+<!-- B4 leaf lines -->
+<path fill="none" stroke="#fb7185" stroke-width="1.5" opacity=".6" d="M870,535 Q920,495 950,480"/>
+<path fill="none" stroke="#fb7185" stroke-width="1.5" opacity=".6" d="M870,555 Q920,555 950,555"/>
+<path fill="none" stroke="#fb7185" stroke-width="1.5" opacity=".6" d="M870,570 Q920,610 950,625"/>
+<path fill="none" stroke="#fb7185" stroke-width="1.5" opacity=".6" d="M870,575 Q920,665 950,680"/>
+<path fill="none" stroke="#fb7185" stroke-width="1.5" opacity=".6" d="M870,580 Q920,715 950,730"/>
+
+<!-- CENTER -->
+<g class="pulse">
+  <ellipse cx="555" cy="400" rx="80" ry="55" fill="#7c3aed" stroke="#a78bfa" stroke-width="3" filter="url(#glow1)"/>
+  <text x="555" y="390" text-anchor="middle" font-size="20" fill="white">📚</text>
+  <text x="555" y="408" text-anchor="middle" font-size="12" fill="white" font-weight="bold">BIBLIO-</text>
+  <text x="555" y="424" text-anchor="middle" font-size="12" fill="white" font-weight="bold">GRAFÍA</text>
+</g>
+
+<!-- ======= BRANCH 1 ======= -->
+<g class="branch" id="b1n" data-tip="Origen en Inglaterra, s.XVIII. Practicada por bibliotecarios y libreros. La Bibliografía como 'Ciencia del Libro'. Vigente en países anglosajones.">
+  <rect x="165" y="200" width="160" height="60" rx="12" fill="#1d4ed8" stroke="#60a5fa" stroke-width="2" filter="url(#glow1)"/>
+  <text x="245" y="222" text-anchor="middle" font-size="10" fill="white">1️⃣ Corriente</text>
+  <text x="245" y="237" text-anchor="middle" font-size="11.5" fill="white" font-weight="bold">Anglosajona</text>
+  <text x="245" y="251" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Bib. Tipográfica</text>
+</g>
+<!-- B1 leaves -->
+<g id="b1l">
+  <rect x="5" y="130" width="145" height="36" rx="8" fill="#1e3a8a" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="77" y="147" text-anchor="middle" font-size="9.5" fill="white">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Origen: Inglaterra</text>
+  <text x="77" y="160" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Primera mitad s.XVIII</text>
+
+  <rect x="5" y="212" width="145" height="36" rx="8" fill="#1e3a8a" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="77" y="228" text-anchor="middle" font-size="9.5" fill="white">📖 "Ciencia del Libro"</text>
+  <text x="77" y="241" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Postulado principal</text>
+
+  <rect x="5" y="288" width="145" height="36" rx="8" fill="#1e3a8a" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="77" y="303" text-anchor="middle" font-size="9.5" fill="white">📜 Libros antiguos</text>
+  <text x="77" y="316" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Incunables (s.XV)</text>
+
+  <rect x="5" y="366" width="145" height="36" rx="8" fill="#1e3a8a" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="77" y="381" text-anchor="middle" font-size="9.5" fill="white">🔎 Histórica · Descriptiva</text>
+  <text x="77" y="394" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Analítica · Catalográfica</text>
+
+  <rect x="5" y="428" width="145" height="36" rx="8" fill="#1e3a8a" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="77" y="443" text-anchor="middle" font-size="9.5" fill="white">🔄 Vigente en países</text>
+  <text x="77" y="456" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">de habla inglesa</text>
+</g>
+
+<!-- ======= BRANCH 2 ======= -->
+<g class="branch" id="b2n" data-tip="Gabriel Peignot (1802): distingue Bibliología de Bibliografía. La bibliografía es la 'Ciencia de los Repertorios'. Louise Malclès: función instrumental para el trabajo intelectual.">
+  <rect x="165" y="525" width="160" height="60" rx="12" fill="#065f46" stroke="#34d399" stroke-width="2" filter="url(#glow1)"/>
+  <text x="245" y="547" text-anchor="middle" font-size="10" fill="white">2️⃣ Corriente</text>
+  <text x="245" y="562" text-anchor="middle" font-size="11.5" fill="white" font-weight="bold">Europeo-Continental</text>
+  <text x="245" y="576" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Peignot, 1802</text>
+</g>
+<!-- B2 leaves -->
+<g id="b2l">
+  <rect x="5" y="462" width="145" height="36" rx="8" fill="#064e3b" stroke="#6ee7b7" stroke-width="1.5"/>
+  <text x="77" y="477" text-anchor="middle" font-size="9.5" fill="white">🏗 Bibliología →</text>
+  <text x="77" y="490" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Ciencia general del libro</text>
+
+  <rect x="5" y="537" width="145" height="36" rx="8" fill="#064e3b" stroke="#6ee7b7" stroke-width="1.5"/>
+  <text x="77" y="552" text-anchor="middle" font-size="9.5" fill="white">📋 "Ciencia de los</text>
+  <text x="77" y="565" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Repertorios"</text>
+
+  <rect x="5" y="608" width="145" height="36" rx="8" fill="#064e3b" stroke="#6ee7b7" stroke-width="1.5"/>
+  <text x="77" y="623" text-anchor="middle" font-size="9.5" fill="white">🛠 Buscar · Identificar</text>
+  <text x="77" y="636" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Describir · Clasificar</text>
+
+  <rect x="5" y="663" width="145" height="36" rx="8" fill="#064e3b" stroke="#6ee7b7" stroke-width="1.5"/>
+  <text x="77" y="678" text-anchor="middle" font-size="9.5" fill="white">👩‍💼 Malclès: formar</text>
+  <text x="77" y="691" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">repertorios intelectuales</text>
+</g>
+
+<!-- ======= BRANCH 3 ======= -->
+<g class="branch" id="b3n" data-tip="Una buena bibliografía debe ser precisa, exhaustiva, sin repeticiones, bien organizada y con sentido crítico del bibliógrafo.">
+  <rect x="780" y="200" width="160" height="60" rx="12" fill="#92400e" stroke="#fbbf24" stroke-width="2" filter="url(#glow1)"/>
+  <text x="860" y="222" text-anchor="middle" font-size="10" fill="white">3️⃣ Postulados</text>
+  <text x="860" y="237" text-anchor="middle" font-size="11.5" fill="white" font-weight="bold">Generales</text>
+  <text x="860" y="251" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Buena Bibliografía</text>
+</g>
+<!-- B3 leaves -->
+<g id="b3l">
+  <rect x="955" y="130" width="140" height="36" rx="8" fill="#78350f" stroke="#fcd34d" stroke-width="1.5"/>
+  <text x="1025" y="147" text-anchor="middle" font-size="9.5" fill="white">✔ Precisión</text>
+  <text x="1025" y="160" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">en los datos</text>
+
+  <rect x="955" y="212" width="140" height="36" rx="8" fill="#78350f" stroke="#fcd34d" stroke-width="1.5"/>
+  <text x="1025" y="228" text-anchor="middle" font-size="9.5" fill="white">✔ Exhaustividad</text>
+  <text x="1025" y="241" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">sin repeticiones</text>
+
+  <rect x="955" y="288" width="140" height="36" rx="8" fill="#78350f" stroke="#fcd34d" stroke-width="1.5"/>
+  <text x="1025" y="303" text-anchor="middle" font-size="9.5" fill="white">✔ Sentido crítico</text>
+  <text x="1025" y="316" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">del bibliógrafo</text>
+
+  <rect x="955" y="366" width="140" height="36" rx="8" fill="#78350f" stroke="#fcd34d" stroke-width="1.5"/>
+  <text x="1025" y="381" text-anchor="middle" font-size="9.5" fill="white">🎯 Registrar · Verificar</text>
+  <text x="1025" y="394" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Informar nuevas obras</text>
+</g>
+
+<!-- ======= BRANCH 4 ======= -->
+<g class="branch" id="b4n" data-tip="Tipologías: Descriptiva (características físicas), Analítica (resumen + palabras clave), Crítica (juicios de valor), Nacional (producción de un país), Universal (Otlet & La Fontaine).">
+  <rect x="780" y="525" width="160" height="60" rx="12" fill="#831843" stroke="#f472b6" stroke-width="2" filter="url(#glow1)"/>
+  <text x="860" y="547" text-anchor="middle" font-size="10" fill="white">4️⃣ Principales</text>
+  <text x="860" y="562" text-anchor="middle" font-size="11.5" fill="white" font-weight="bold">Tipologías</text>
+  <text x="860" y="576" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Bibliográficas</text>
+</g>
+<!-- B4 leaves -->
+<g id="b4l">
+  <rect x="955" y="462" width="140" height="36" rx="8" fill="#701a40" stroke="#fb7185" stroke-width="1.5"/>
+  <text x="1025" y="477" text-anchor="middle" font-size="9.5" fill="white">📘 Descriptiva</text>
+  <text x="1025" y="490" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Características físicas</text>
+
+  <rect x="955" y="537" width="140" height="36" rx="8" fill="#701a40" stroke="#fb7185" stroke-width="1.5"/>
+  <text x="1025" y="552" text-anchor="middle" font-size="9.5" fill="white">📙 Analítica</text>
+  <text x="1025" y="565" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Resumen + palabras clave</text>
+
+  <rect x="955" y="608" width="140" height="36" rx="8" fill="#701a40" stroke="#fb7185" stroke-width="1.5"/>
+  <text x="1025" y="623" text-anchor="middle" font-size="9.5" fill="white">📕 Crítica</text>
+  <text x="1025" y="636" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Juicios de valor</text>
+
+  <rect x="955" y="663" width="140" height="36" rx="8" fill="#701a40" stroke="#fb7185" stroke-width="1.5"/>
+  <text x="1025" y="678" text-anchor="middle" font-size="9.5" fill="white">🌎 Nacional</text>
+  <text x="1025" y="691" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Producción de un país</text>
+
+  <rect x="955" y="714" width="140" height="36" rx="8" fill="#701a40" stroke="#fb7185" stroke-width="1.5"/>
+  <text x="1025" y="729" text-anchor="middle" font-size="9.5" fill="white">🌍 Universal</text>
+  <text x="1025" y="742" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Otlet & La Fontaine</text>
+</g>
+
+</svg>
+
+<div class="legend">
+  <div class="li"><div class="ld" style="background:#1d4ed8"></div>Corriente Anglosajona</div>
+  <div class="li"><div class="ld" style="background:#065f46"></div>Corriente Europeo-Continental</div>
+  <div class="li"><div class="ld" style="background:#92400e"></div>Postulados Generales</div>
+  <div class="li"><div class="ld" style="background:#831843"></div>Tipologías Bibliográficas</div>
+</div>
+
+<div class="tooltip" id="tip"></div>
+
+<script>
+  const branches = ['b1n','b2n','b3n','b4n'];
+  const state = {};
+  branches.forEach(id => {
+    state[id] = true;
+    const el = document.getElementById(id);
+    el.addEventListener('mouseenter', e => {
+      const tip = document.getElementById('tip');
+      tip.textContent = el.dataset.tip;
+      tip.style.opacity = '1';
+    });
+    el.addEventListener('mousemove', e => {
+      const tip = document.getElementById('tip');
+      tip.style.left = (e.clientX+15)+'px';
+      tip.style.top = (e.clientY-10)+'px';
+    });
+    el.addEventListener('mouseleave', () => {
+      document.getElementById('tip').style.opacity = '0';
+    });
+    el.addEventListener('click', () => {
+      const lId = id.replace('n','l');
+      const leaves = document.getElementById(lId);
+      if (!leaves) return;
+      state[id] = !state[id];
+      leaves.style.opacity = state[id] ? '1' : '0.15';
+      leaves.style.transition = 'opacity 0.3s';
+    });
+  });
+</script>
+</body>
+</html>
