@@ -11,17 +11,16 @@
     font-family: 'Segoe UI', sans-serif;
   }
   h1 { text-align:center; color:#fff; padding:28px 20px 6px; font-size:1.8rem; letter-spacing:2px; text-shadow:0 0 20px rgba(120,100,255,.8); }
-  .sub { text-align:center; color:rgba(255,255,255,.5); font-size:.85rem; margin-bottom:20px; }
+  .sub { text-align:center; color:rgba(255,255,255,.5); font-size:.85rem; margin-bottom:10px; }
+  .author-badge { text-align:center; color:rgba(255,255,255,.35); font-size:.72rem; padding-bottom:10px; letter-spacing:1px; }
   svg { overflow:visible; display:block; margin:0 auto; }
   .pulse ellipse { animation: glow 2.5s infinite; }
   @keyframes glow { 0%,100%{filter:drop-shadow(0 0 10px #7c3aed)} 50%{filter:drop-shadow(0 0 25px #a78bfa)} }
-  .branch { cursor:pointer; transition:transform .2s; }
-  .branch:hover { transform-origin:center; }
+  .branch { cursor:pointer; }
   .tooltip { position:fixed; background:rgba(10,8,30,.95); border:1px solid rgba(255,255,255,.2); border-radius:10px; padding:9px 13px; color:#fff; font-size:.78rem; pointer-events:none; opacity:0; transition:opacity .2s; max-width:240px; z-index:100; }
-  .legend { display:flex; justify-content:center; gap:18px; flex-wrap:wrap; padding:14px 20px 28px; }
-  .li { display:flex; align-items:center; gap:7px; color:rgba(255,255,255,.7); font-size:.78rem; }
-  .ld { width:13px; height:13px; border-radius:3px; }
-  .author-badge { text-align:center; color:rgba(255,255,255,.35); font-size:.72rem; padding-bottom:6px; letter-spacing:1px; }
+  .legend { display:flex; justify-content:center; gap:14px; flex-wrap:wrap; padding:14px 20px 28px; }
+  .li { display:flex; align-items:center; gap:7px; color:rgba(255,255,255,.7); font-size:.75rem; }
+  .ld { width:13px; height:13px; border-radius:3px; flex-shrink:0; }
 </style>
 </head>
 <body>
@@ -29,242 +28,243 @@
 <p class="sub">Corrientes · Postulados · Tipologías &nbsp;|&nbsp; Haz clic en una rama para resaltarla</p>
 <p class="author-badge">Basado en Catalina Naumis Peña (2008) y corrientes doctrinales clásicas</p>
 
-<svg id="mm" width="1200" height="1100" viewBox="0 0 1200 1100">
+<svg width="1300" height="1200" viewBox="0 0 1300 1200">
 <defs>
-  <filter id="glow1"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="gf"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
 </defs>
 
-<!-- ===== CONNECTIONS center to 8 branches ===== -->
-<!-- Top 4 -->
-<path fill="none" stroke="#60a5fa" stroke-width="2.5" opacity=".7" d="M560,490 Q430,380 310,330"/>
-<path fill="none" stroke="#34d399" stroke-width="2.5" opacity=".7" d="M560,490 Q490,360 440,290"/>
-<path fill="none" stroke="#fbbf24" stroke-width="2.5" opacity=".7" d="M650,490 Q720,360 770,290"/>
-<path fill="none" stroke="#f472b6" stroke-width="2.5" opacity=".7" d="M650,490 Q790,380 890,330"/>
-<!-- Bottom 4 -->
-<path fill="none" stroke="#a78bfa" stroke-width="2.5" opacity=".7" d="M560,530 Q430,640 310,690"/>
-<path fill="none" stroke="#fb923c" stroke-width="2.5" opacity=".7" d="M560,530 Q490,660 440,730"/>
-<path fill="none" stroke="#22d3ee" stroke-width="2.5" opacity=".7" d="M650,530 Q720,660 770,730"/>
-<path fill="none" stroke="#86efac" stroke-width="2.5" opacity=".7" d="M650,530 Q790,640 890,690"/>
+<!-- ===== CENTRO → RAMAS (líneas principales) ===== -->
+<!-- B1 Inglesa → arriba-izquierda -->
+<path fill="none" stroke="#60a5fa" stroke-width="2.5" opacity=".7" d="M615,580 Q500,460 350,390"/>
+<!-- B2 Alemana → izquierda -->
+<path fill="none" stroke="#34d399" stroke-width="2.5" opacity=".7" d="M600,590 Q480,590 360,590"/>
+<!-- B3 Norteamericana → abajo-izquierda -->
+<path fill="none" stroke="#a78bfa" stroke-width="2.5" opacity=".7" d="M615,620 Q500,720 350,790"/>
+<!-- B4 Postulados → abajo -->
+<path fill="none" stroke="#fb923c" stroke-width="2.5" opacity=".7" d="M650,640 Q650,770 650,870"/>
+<!-- B5 Universalista → arriba-derecha -->
+<path fill="none" stroke="#f472b6" stroke-width="2.5" opacity=".7" d="M690,580 Q810,460 950,390"/>
+<!-- B6 Tipografía → derecha -->
+<path fill="none" stroke="#fbbf24" stroke-width="2.5" opacity=".7" d="M705,590 Q830,590 940,590"/>
+<!-- B7 Bib. Analítica → abajo-derecha -->
+<path fill="none" stroke="#22d3ee" stroke-width="2.5" opacity=".7" d="M690,620 Q810,720 950,790"/>
+<!-- B8 Naumis s.XXI → arriba -->
+<path fill="none" stroke="#86efac" stroke-width="2.5" opacity=".7" d="M650,565 Q650,440 650,340"/>
 
-<!-- B1 leaf lines (Anglosajona) -->
-<path fill="none" stroke="#93c5fd" stroke-width="1.5" opacity=".5" d="M245,315 Q185,270 155,248"/>
-<path fill="none" stroke="#93c5fd" stroke-width="1.5" opacity=".5" d="M245,330 Q185,330 155,330"/>
-<path fill="none" stroke="#93c5fd" stroke-width="1.5" opacity=".5" d="M245,345 Q185,390 155,405"/>
-<path fill="none" stroke="#93c5fd" stroke-width="1.5" opacity=".5" d="M245,348 Q185,455 155,465"/>
+<!-- ===== HOJAS B1 (Corriente Inglesa) ===== -->
+<path fill="none" stroke="#93c5fd" stroke-width="1.5" opacity=".5" d="M280,375 Q210,330 140,315"/>
+<path fill="none" stroke="#93c5fd" stroke-width="1.5" opacity=".5" d="M280,390 Q210,390 140,390"/>
+<path fill="none" stroke="#93c5fd" stroke-width="1.5" opacity=".5" d="M280,405 Q210,450 140,465"/>
 
-<!-- B2 leaf lines (Alemana) -->
-<path fill="none" stroke="#86efac" stroke-width="1.5" opacity=".5" d="M415,270 Q380,215 360,195"/>
-<path fill="none" stroke="#86efac" stroke-width="1.5" opacity=".5" d="M415,278 Q370,260 335,260"/>
-<path fill="none" stroke="#86efac" stroke-width="1.5" opacity=".5" d="M415,285 Q370,320 335,340"/>
+<!-- ===== HOJAS B2 (Corriente Alemana) ===== -->
+<path fill="none" stroke="#6ee7b7" stroke-width="1.5" opacity=".5" d="M280,575 Q210,535 140,520"/>
+<path fill="none" stroke="#6ee7b7" stroke-width="1.5" opacity=".5" d="M280,590 Q210,590 140,590"/>
+<path fill="none" stroke="#6ee7b7" stroke-width="1.5" opacity=".5" d="M280,605 Q210,645 140,660"/>
 
-<!-- B3 leaf lines (Norteamericana) -->
-<path fill="none" stroke="#fde68a" stroke-width="1.5" opacity=".5" d="M795,270 Q830,215 855,195"/>
-<path fill="none" stroke="#fde68a" stroke-width="1.5" opacity=".5" d="M795,278 Q840,260 870,260"/>
-<path fill="none" stroke="#fde68a" stroke-width="1.5" opacity=".5" d="M795,285 Q840,320 870,340"/>
+<!-- ===== HOJAS B3 (Norteamericana) ===== -->
+<path fill="none" stroke="#c4b5fd" stroke-width="1.5" opacity=".5" d="M280,775 Q210,740 140,725"/>
+<path fill="none" stroke="#c4b5fd" stroke-width="1.5" opacity=".5" d="M280,790 Q210,790 140,790"/>
+<path fill="none" stroke="#c4b5fd" stroke-width="1.5" opacity=".5" d="M280,805 Q210,845 140,860"/>
 
-<!-- B4 leaf lines (Científica/Universalista) -->
-<path fill="none" stroke="#fda4af" stroke-width="1.5" opacity=".5" d="M955,315 Q1020,270 1050,248"/>
-<path fill="none" stroke="#fda4af" stroke-width="1.5" opacity=".5" d="M955,330 Q1020,330 1050,330"/>
-<path fill="none" stroke="#fda4af" stroke-width="1.5" opacity=".5" d="M955,345 Q1020,390 1050,405"/>
+<!-- ===== HOJAS B4 (Postulados) ===== -->
+<path fill="none" stroke="#fdba74" stroke-width="1.5" opacity=".5" d="M575,955 Q510,1000 440,1010"/>
+<path fill="none" stroke="#fdba74" stroke-width="1.5" opacity=".5" d="M590,960 Q590,1010 590,1020"/>
+<path fill="none" stroke="#fdba74" stroke-width="1.5" opacity=".5" d="M720,955 Q790,1000 860,1010"/>
 
-<!-- B5 leaf lines (Postulados Generales) -->
-<path fill="none" stroke="#c4b5fd" stroke-width="1.5" opacity=".5" d="M245,705 Q185,660 155,645"/>
-<path fill="none" stroke="#c4b5fd" stroke-width="1.5" opacity=".5" d="M245,712 Q185,712 155,712"/>
-<path fill="none" stroke="#c4b5fd" stroke-width="1.5" opacity=".5" d="M245,720 Q185,760 155,775"/>
-<path fill="none" stroke="#c4b5fd" stroke-width="1.5" opacity=".5" d="M245,725 Q185,820 155,835"/>
+<!-- ===== HOJAS B5 (Universalista) ===== -->
+<path fill="none" stroke="#fda4af" stroke-width="1.5" opacity=".5" d="M1020,375 Q1090,330 1155,315"/>
+<path fill="none" stroke="#fda4af" stroke-width="1.5" opacity=".5" d="M1020,390 Q1090,390 1155,390"/>
+<path fill="none" stroke="#fda4af" stroke-width="1.5" opacity=".5" d="M1020,405 Q1090,450 1155,465"/>
 
-<!-- B6 leaf lines (Bib. Descriptiva) -->
-<path fill="none" stroke="#fdba74" stroke-width="1.5" opacity=".5" d="M415,748 Q370,710 335,695"/>
-<path fill="none" stroke="#fdba74" stroke-width="1.5" opacity=".5" d="M415,755 Q370,755 335,755"/>
+<!-- ===== HOJAS B6 (Tipográfica/Material) ===== -->
+<path fill="none" stroke="#fde68a" stroke-width="1.5" opacity=".5" d="M1020,575 Q1090,535 1155,520"/>
+<path fill="none" stroke="#fde68a" stroke-width="1.5" opacity=".5" d="M1020,590 Q1090,590 1155,590"/>
+<path fill="none" stroke="#fde68a" stroke-width="1.5" opacity=".5" d="M1020,605 Q1090,645 1155,660"/>
 
-<!-- B7 leaf lines (Bib. Analítica) -->
-<path fill="none" stroke="#67e8f9" stroke-width="1.5" opacity=".5" d="M795,748 Q840,710 870,695"/>
-<path fill="none" stroke="#67e8f9" stroke-width="1.5" opacity=".5" d="M795,755 Q840,755 870,755"/>
-<path fill="none" stroke="#67e8f9" stroke-width="1.5" opacity=".5" d="M795,762 Q840,800 870,815"/>
+<!-- ===== HOJAS B7 (Bib. Analítica) ===== -->
+<path fill="none" stroke="#67e8f9" stroke-width="1.5" opacity=".5" d="M1020,775 Q1090,740 1155,725"/>
+<path fill="none" stroke="#67e8f9" stroke-width="1.5" opacity=".5" d="M1020,790 Q1090,790 1155,790"/>
+<path fill="none" stroke="#67e8f9" stroke-width="1.5" opacity=".5" d="M1020,805 Q1090,845 1155,860"/>
 
-<!-- B8 leaf lines (s.XXI Naumis) -->
-<path fill="none" stroke="#bbf7d0" stroke-width="1.5" opacity=".5" d="M955,705 Q1020,660 1050,645"/>
-<path fill="none" stroke="#bbf7d0" stroke-width="1.5" opacity=".5" d="M955,712 Q1020,712 1050,712"/>
-<path fill="none" stroke="#bbf7d0" stroke-width="1.5" opacity=".5" d="M955,720 Q1020,760 1050,775"/>
+<!-- ===== HOJAS B8 (Naumis s.XXI) ===== -->
+<path fill="none" stroke="#bbf7d0" stroke-width="1.5" opacity=".5" d="M575,255 Q510,210 440,195"/>
+<path fill="none" stroke="#bbf7d0" stroke-width="1.5" opacity=".5" d="M590,250 Q590,200 590,185"/>
+<path fill="none" stroke="#bbf7d0" stroke-width="1.5" opacity=".5" d="M720,255 Q790,210 860,195"/>
 
-<!-- ===== CENTER ===== -->
+<!-- ===== CENTRO ===== -->
 <g class="pulse">
-  <ellipse cx="605" cy="510" rx="82" ry="55" fill="#7c3aed" stroke="#a78bfa" stroke-width="3" filter="url(#glow1)"/>
-  <text x="605" y="500" text-anchor="middle" font-size="20" fill="white">📚</text>
-  <text x="605" y="518" text-anchor="middle" font-size="12" fill="white" font-weight="bold">BIBLIO-</text>
-  <text x="605" y="534" text-anchor="middle" font-size="12" fill="white" font-weight="bold">GRAFÍA</text>
+  <ellipse cx="650" cy="600" rx="85" ry="57" fill="#7c3aed" stroke="#a78bfa" stroke-width="3" filter="url(#gf)"/>
+  <text x="650" y="589" text-anchor="middle" font-size="20" fill="white">📚</text>
+  <text x="650" y="607" text-anchor="middle" font-size="12" fill="white" font-weight="bold">BIBLIO-</text>
+  <text x="650" y="623" text-anchor="middle" font-size="12" fill="white" font-weight="bold">GRAFÍA</text>
 </g>
 
-<!-- ===== BRANCH 1: Corriente Inglesa (Anglosajona) ===== -->
-<g class="branch" id="b1n" data-tip="Naumis Peña (2008): Representada por Greg, Cowley, Besterman y Bowers. Define la bibliografía como la 'ciencia del libro'. Se centra en el libro como objeto físico para determinar la versión más fiel de un texto.">
-  <rect x="165" y="300" width="165" height="60" rx="12" fill="#1d4ed8" stroke="#60a5fa" stroke-width="2" filter="url(#glow1)"/>
-  <text x="247" y="322" text-anchor="middle" font-size="9.5" fill="white">1️⃣ Corriente Inglesa</text>
-  <text x="247" y="337" text-anchor="middle" font-size="11" fill="white" font-weight="bold">Anglosajona</text>
-  <text x="247" y="351" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Bib. Material / Tipográfica</text>
+<!-- ===== B1: CORRIENTE INGLESA (arriba-izquierda) ===== -->
+<g class="branch" id="b1n" data-tip="Naumis Peña (2008): Greg, Cowley, Besterman y Bowers. Define la bibliografía como 'ciencia del libro'. Estudia el libro como objeto físico para determinar la versión más fiel de un texto.">
+  <rect x="270" y="363" width="170" height="58" rx="12" fill="#1d4ed8" stroke="#60a5fa" stroke-width="2" filter="url(#gf)"/>
+  <text x="355" y="385" text-anchor="middle" font-size="9.5" fill="white">1️⃣ Corriente Inglesa</text>
+  <text x="355" y="400" text-anchor="middle" font-size="11.5" fill="white" font-weight="bold">Anglosajona</text>
+  <text x="355" y="414" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Bib. Material / Tipográfica</text>
 </g>
 <g id="b1l">
-  <rect x="5" y="230" width="148" height="36" rx="8" fill="#1e3a8a" stroke="#93c5fd" stroke-width="1.5"/>
-  <text x="79" y="246" text-anchor="middle" font-size="9" fill="white">👤 Greg · Cowley</text>
-  <text x="79" y="259" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Besterman · Bowers</text>
+  <rect x="5" y="297" width="130" height="40" rx="8" fill="#1e3a8a" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="70" y="313" text-anchor="middle" font-size="9" fill="white">👤 Greg · Cowley</text>
+  <text x="70" y="327" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Besterman · Bowers</text>
 
-  <rect x="5" y="312" width="148" height="36" rx="8" fill="#1e3a8a" stroke="#93c5fd" stroke-width="1.5"/>
-  <text x="79" y="327" text-anchor="middle" font-size="9.5" fill="white">📖 "Ciencia del Libro"</text>
-  <text x="79" y="340" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Postulado principal</text>
+  <rect x="5" y="371" width="130" height="40" rx="8" fill="#1e3a8a" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="70" y="387" text-anchor="middle" font-size="9.5" fill="white">📖 "Ciencia del Libro"</text>
+  <text x="70" y="401" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Postulado principal</text>
 
-  <rect x="5" y="387" width="148" height="36" rx="8" fill="#1e3a8a" stroke="#93c5fd" stroke-width="1.5"/>
-  <text x="79" y="402" text-anchor="middle" font-size="9.5" fill="white">🔎 Histórica · Descriptiva</text>
-  <text x="79" y="415" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Analítica · Catalográfica</text>
-
-  <rect x="5" y="447" width="148" height="36" rx="8" fill="#1e3a8a" stroke="#93c5fd" stroke-width="1.5"/>
-  <text x="79" y="462" text-anchor="middle" font-size="9.5" fill="white">📜 Libro como objeto físico</text>
-  <text x="79" y="475" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Versión más fiel del texto</text>
+  <rect x="5" y="447" width="130" height="40" rx="8" fill="#1e3a8a" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="70" y="463" text-anchor="middle" font-size="9.5" fill="white">📜 Libro como objeto físico</text>
+  <text x="70" y="477" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Versión más fiel del texto</text>
 </g>
 
-<!-- ===== BRANCH 2: Corriente Alemana ===== -->
-<g class="branch" id="b2n" data-tip="Naumis Peña (2008): Corriente Alemana (Bibliografía Sistemática). Base del movimiento industrial en EE.UU. Malclès la retoma: la bibliografía como 'instrumentos de trabajo intelectual'.">
-  <rect x="325" y="245" width="165" height="60" rx="12" fill="#065f46" stroke="#34d399" stroke-width="2" filter="url(#glow1)"/>
-  <text x="407" y="267" text-anchor="middle" font-size="9.5" fill="white">2️⃣ Corriente Alemana</text>
-  <text x="407" y="282" text-anchor="middle" font-size="11" fill="white" font-weight="bold">Sistemática</text>
-  <text x="407" y="296" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Base repertorios modernos</text>
+<!-- ===== B2: CORRIENTE ALEMANA (izquierda) ===== -->
+<g class="branch" id="b2n" data-tip="Naumis Peña (2008): Corriente Alemana — Bibliografía Sistemática. Base del movimiento industrial en EE.UU. Malclès la retoma: bibliografía como 'instrumentos de trabajo intelectual'.">
+  <rect x="270" y="563" width="170" height="58" rx="12" fill="#065f46" stroke="#34d399" stroke-width="2" filter="url(#gf)"/>
+  <text x="355" y="585" text-anchor="middle" font-size="9.5" fill="white">2️⃣ Corriente Alemana</text>
+  <text x="355" y="600" text-anchor="middle" font-size="11.5" fill="white" font-weight="bold">Sistemática</text>
+  <text x="355" y="614" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Base repertorios modernos</text>
 </g>
 <g id="b2l">
-  <rect x="220" y="177" width="148" height="36" rx="8" fill="#064e3b" stroke="#6ee7b7" stroke-width="1.5"/>
-  <text x="294" y="192" text-anchor="middle" font-size="9.5" fill="white">🏭 Base movimiento</text>
-  <text x="294" y="205" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">industrial en EE.UU.</text>
+  <rect x="5" y="502" width="130" height="40" rx="8" fill="#064e3b" stroke="#6ee7b7" stroke-width="1.5"/>
+  <text x="70" y="518" text-anchor="middle" font-size="9.5" fill="white">🏭 Base movimiento</text>
+  <text x="70" y="532" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">industrial en EE.UU.</text>
 
-  <rect x="200" y="243" width="148" height="36" rx="8" fill="#064e3b" stroke="#6ee7b7" stroke-width="1.5"/>
-  <text x="274" y="258" text-anchor="middle" font-size="9.5" fill="white">📋 Organización y registro</text>
-  <text x="274" y="271" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">metódico de obras</text>
+  <rect x="5" y="572" width="130" height="40" rx="8" fill="#064e3b" stroke="#6ee7b7" stroke-width="1.5"/>
+  <text x="70" y="588" text-anchor="middle" font-size="9.5" fill="white">📋 Organización y registro</text>
+  <text x="70" y="602" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">metódico de obras</text>
 
-  <rect x="200" y="322" width="148" height="36" rx="8" fill="#064e3b" stroke="#6ee7b7" stroke-width="1.5"/>
-  <text x="274" y="337" text-anchor="middle" font-size="9.5" fill="white">🛠 Malclès: "instrumentos</text>
-  <text x="274" y="350" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">de trabajo intelectual"</text>
+  <rect x="5" y="642" width="130" height="40" rx="8" fill="#064e3b" stroke="#6ee7b7" stroke-width="1.5"/>
+  <text x="70" y="658" text-anchor="middle" font-size="9.5" fill="white">🛠 Malclès: "instrumentos</text>
+  <text x="70" y="672" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">de trabajo intelectual"</text>
 </g>
 
-<!-- ===== BRANCH 3: Corriente Norteamericana ===== -->
-<g class="branch" id="b3n" data-tip="Naumis Peña (2008): Harmon y Krummel. Divide en bibliografía analítica/crítica (libro como entidad física) y enumerativa/sistemática (entidad intelectual organizada lógicamente).">
-  <rect x="715" y="245" width="165" height="60" rx="12" fill="#92400e" stroke="#fbbf24" stroke-width="2" filter="url(#glow1)"/>
-  <text x="797" y="267" text-anchor="middle" font-size="9.5" fill="white">3️⃣ Corriente</text>
-  <text x="797" y="282" text-anchor="middle" font-size="11" fill="white" font-weight="bold">Norteamericana</text>
-  <text x="797" y="296" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Harmon · Krummel</text>
+<!-- ===== B3: CORRIENTE NORTEAMERICANA (abajo-izquierda) ===== -->
+<g class="branch" id="b3n" data-tip="Naumis Peña (2008): Harmon y Krummel. Divide en bibliografía analítica/crítica (entidad física) y enumerativa/sistemática (entidad intelectual organizada lógicamente).">
+  <rect x="270" y="763" width="170" height="58" rx="12" fill="#4c1d95" stroke="#a78bfa" stroke-width="2" filter="url(#gf)"/>
+  <text x="355" y="785" text-anchor="middle" font-size="9.5" fill="white">3️⃣ Corriente</text>
+  <text x="355" y="800" text-anchor="middle" font-size="11.5" fill="white" font-weight="bold">Norteamericana</text>
+  <text x="355" y="814" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Harmon · Krummel</text>
 </g>
 <g id="b3l">
-  <rect x="840" y="177" width="148" height="36" rx="8" fill="#78350f" stroke="#fcd34d" stroke-width="1.5"/>
-  <text x="914" y="192" text-anchor="middle" font-size="9.5" fill="white">📘 Bib. Analítica / Crítica</text>
-  <text x="914" y="205" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Libro como entidad física</text>
+  <rect x="5" y="706" width="130" height="40" rx="8" fill="#3b0764" stroke="#c4b5fd" stroke-width="1.5"/>
+  <text x="70" y="722" text-anchor="middle" font-size="9.5" fill="white">📘 Bib. Analítica/Crítica</text>
+  <text x="70" y="736" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Libro como entidad física</text>
 
-  <rect x="860" y="243" width="148" height="36" rx="8" fill="#78350f" stroke="#fcd34d" stroke-width="1.5"/>
-  <text x="934" y="258" text-anchor="middle" font-size="9.5" fill="white">📗 Bib. Enumerativa</text>
-  <text x="934" y="271" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Entidad intelectual lógica</text>
+  <rect x="5" y="771" width="130" height="40" rx="8" fill="#3b0764" stroke="#c4b5fd" stroke-width="1.5"/>
+  <text x="70" y="787" text-anchor="middle" font-size="9.5" fill="white">📗 Bib. Enumerativa</text>
+  <text x="70" y="801" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Entidad intelectual lógica</text>
 
-  <rect x="860" y="322" width="148" height="36" rx="8" fill="#78350f" stroke="#fcd34d" stroke-width="1.5"/>
-  <text x="934" y="337" text-anchor="middle" font-size="9.5" fill="white">✂ Dos grandes ramas</text>
-  <text x="934" y="350" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">de la disciplina</text>
+  <rect x="5" y="842" width="130" height="40" rx="8" fill="#3b0764" stroke="#c4b5fd" stroke-width="1.5"/>
+  <text x="70" y="858" text-anchor="middle" font-size="9.5" fill="white">✂ Dos grandes ramas</text>
+  <text x="70" y="872" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">de la disciplina</text>
 </g>
 
-<!-- ===== BRANCH 4: Corriente Científica/Universalista ===== -->
-<g class="branch" id="b4n" data-tip="Naumis Peña (2008): Paul Otlet y Henri La Fontaine (fines s.XIX). Bibliografía científica y universal. Repertorio Bibliográfico Universal. Cooperación internacional para unificar el registro de información.">
-  <rect x="870" y="300" width="165" height="60" rx="12" fill="#831843" stroke="#f472b6" stroke-width="2" filter="url(#glow1)"/>
-  <text x="952" y="320" text-anchor="middle" font-size="9.5" fill="white">4️⃣ Corriente Científica</text>
-  <text x="952" y="335" text-anchor="middle" font-size="11" fill="white" font-weight="bold">Universalista</text>
-  <text x="952" y="349" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Otlet · La Fontaine</text>
+<!-- ===== B4: POSTULADOS GENERALES (abajo-centro) ===== -->
+<g class="branch" id="b4n" data-tip="Una buena bibliografía: precisa, exhaustiva, sin repeticiones, bien organizada y con sentido crítico del bibliógrafo.">
+  <rect x="565" y="870" width="170" height="58" rx="12" fill="#7c2d12" stroke="#fb923c" stroke-width="2" filter="url(#gf)"/>
+  <text x="650" y="892" text-anchor="middle" font-size="9.5" fill="white">4️⃣ Postulados</text>
+  <text x="650" y="907" text-anchor="middle" font-size="11.5" fill="white" font-weight="bold">Generales</text>
+  <text x="650" y="921" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Buena Bibliografía</text>
 </g>
 <g id="b4l">
-  <rect x="1035" y="230" width="148" height="36" rx="8" fill="#701a40" stroke="#fb7185" stroke-width="1.5"/>
-  <text x="1109" y="245" text-anchor="middle" font-size="9.5" fill="white">🌍 Bib. Universal</text>
-  <text x="1109" y="258" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Control editorial mundial</text>
+  <rect x="390" y="993" width="130" height="40" rx="8" fill="#431407" stroke="#fdba74" stroke-width="1.5"/>
+  <text x="455" y="1009" text-anchor="middle" font-size="9.5" fill="white">✔ Precisión · Exhaustividad</text>
+  <text x="455" y="1023" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Sin repeticiones</text>
 
-  <rect x="1035" y="312" width="148" height="36" rx="8" fill="#701a40" stroke="#fb7185" stroke-width="1.5"/>
-  <text x="1109" y="327" text-anchor="middle" font-size="9.5" fill="white">🤝 Cooperación internacional</text>
-  <text x="1109" y="340" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Unificar registro info</text>
+  <rect x="585" y="993" width="130" height="40" rx="8" fill="#431407" stroke="#fdba74" stroke-width="1.5"/>
+  <text x="650" y="1009" text-anchor="middle" font-size="9.5" fill="white">✔ Sentido crítico</text>
+  <text x="650" y="1023" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">del bibliógrafo</text>
 
-  <rect x="1035" y="387" width="148" height="36" rx="8" fill="#701a40" stroke="#fb7185" stroke-width="1.5"/>
-  <text x="1109" y="402" text-anchor="middle" font-size="9.5" fill="white">📑 Repertorio Bib.</text>
-  <text x="1109" y="415" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Universal (RBU)</text>
+  <rect x="780" y="993" width="130" height="40" rx="8" fill="#431407" stroke="#fdba74" stroke-width="1.5"/>
+  <text x="845" y="1009" text-anchor="middle" font-size="9.5" fill="white">🎯 Registrar · Verificar</text>
+  <text x="845" y="1023" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Informar nuevas obras</text>
 </g>
 
-<!-- ===== BRANCH 5: Postulados Generales ===== -->
-<g class="branch" id="b5n" data-tip="Una buena bibliografía debe ser precisa, exhaustiva, sin repeticiones, bien organizada y con sentido crítico del bibliógrafo.">
-  <rect x="165" y="675" width="165" height="60" rx="12" fill="#4c1d95" stroke="#a78bfa" stroke-width="2" filter="url(#glow1)"/>
-  <text x="247" y="697" text-anchor="middle" font-size="9.5" fill="white">5️⃣ Postulados</text>
-  <text x="247" y="712" text-anchor="middle" font-size="11" fill="white" font-weight="bold">Generales</text>
-  <text x="247" y="726" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Buena Bibliografía</text>
+<!-- ===== B5: CORRIENTE UNIVERSALISTA (arriba-derecha) ===== -->
+<g class="branch" id="b5n" data-tip="Naumis Peña (2008): Paul Otlet y Henri La Fontaine (fines s.XIX). Bibliografía científica y universal. Repertorio Bibliográfico Universal. Cooperación internacional.">
+  <rect x="860" y="363" width="170" height="58" rx="12" fill="#831843" stroke="#f472b6" stroke-width="2" filter="url(#gf)"/>
+  <text x="945" y="385" text-anchor="middle" font-size="9.5" fill="white">5️⃣ Corriente Científica</text>
+  <text x="945" y="400" text-anchor="middle" font-size="11.5" fill="white" font-weight="bold">Universalista</text>
+  <text x="945" y="414" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Otlet · La Fontaine</text>
 </g>
 <g id="b5l">
-  <rect x="5" y="627" width="148" height="36" rx="8" fill="#3b0764" stroke="#c4b5fd" stroke-width="1.5"/>
-  <text x="79" y="642" text-anchor="middle" font-size="9.5" fill="white">✔ Precisión · Exhaustividad</text>
-  <text x="79" y="655" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Sin repeticiones</text>
+  <rect x="1165" y="297" width="130" height="40" rx="8" fill="#701a40" stroke="#fda4af" stroke-width="1.5"/>
+  <text x="1230" y="313" text-anchor="middle" font-size="9.5" fill="white">🌍 Bib. Universal</text>
+  <text x="1230" y="327" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Control editorial mundial</text>
 
-  <rect x="5" y="694" width="148" height="36" rx="8" fill="#3b0764" stroke="#c4b5fd" stroke-width="1.5"/>
-  <text x="79" y="709" text-anchor="middle" font-size="9.5" fill="white">✔ Sentido crítico</text>
-  <text x="79" y="722" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">del bibliógrafo</text>
+  <rect x="1165" y="371" width="130" height="40" rx="8" fill="#701a40" stroke="#fda4af" stroke-width="1.5"/>
+  <text x="1230" y="387" text-anchor="middle" font-size="9.5" fill="white">🤝 Cooperación internacional</text>
+  <text x="1230" y="401" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Unificar registro info</text>
 
-  <rect x="5" y="757" width="148" height="36" rx="8" fill="#3b0764" stroke="#c4b5fd" stroke-width="1.5"/>
-  <text x="79" y="772" text-anchor="middle" font-size="9.5" fill="white">🎯 Registrar · Verificar</text>
-  <text x="79" y="785" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Informar nuevas obras</text>
-
-  <rect x="5" y="817" width="148" height="36" rx="8" fill="#3b0764" stroke="#c4b5fd" stroke-width="1.5"/>
-  <text x="79" y="832" text-anchor="middle" font-size="9.5" fill="white">🗂 Buena organización</text>
-  <text x="79" y="845" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">para consulta</text>
+  <rect x="1165" y="447" width="130" height="40" rx="8" fill="#701a40" stroke="#fda4af" stroke-width="1.5"/>
+  <text x="1230" y="463" text-anchor="middle" font-size="9.5" fill="white">📑 Repertorio Bib.</text>
+  <text x="1230" y="477" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Universal (RBU)</text>
 </g>
 
-<!-- ===== BRANCH 6: Bibliografía Descriptiva ===== -->
-<g class="branch" id="b6n" data-tip="Bibliografía Descriptiva: registro de características materiales del libro. Fundamental para fondos antiguos e identificación de variantes. Base de la corriente inglesa (libro como objeto físico).">
-  <rect x="325" y="720" width="165" height="60" rx="12" fill="#7c2d12" stroke="#fb923c" stroke-width="2" filter="url(#glow1)"/>
-  <text x="407" y="742" text-anchor="middle" font-size="9.5" fill="white">6️⃣ Tipología:</text>
-  <text x="407" y="757" text-anchor="middle" font-size="11" fill="white" font-weight="bold">Bib. Descriptiva</text>
-  <text x="407" y="771" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Características físicas</text>
+<!-- ===== B6: BIBLIOGRAFÍA TIPOGRÁFICA/MATERIAL (derecha) ===== -->
+<g class="branch" id="b6n" data-tip="Bibliografía Descriptiva/Material: registro de características físicas, papel, filigranas, tipografía. Fundamental para fondos antiguos e identificación de variantes textuales.">
+  <rect x="860" y="563" width="170" height="58" rx="12" fill="#92400e" stroke="#fbbf24" stroke-width="2" filter="url(#gf)"/>
+  <text x="945" y="585" text-anchor="middle" font-size="9.5" fill="white">6️⃣ Tipología:</text>
+  <text x="945" y="600" text-anchor="middle" font-size="11.5" fill="white" font-weight="bold">Bib. Descriptiva</text>
+  <text x="945" y="614" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Características físicas</text>
 </g>
 <g id="b6l">
-  <rect x="162" y="677" width="148" height="36" rx="8" fill="#431407" stroke="#fdba74" stroke-width="1.5"/>
-  <text x="236" y="692" text-anchor="middle" font-size="9.5" fill="white">📦 Materia · papel</text>
-  <text x="236" y="705" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">filigranas · tipografía</text>
+  <rect x="1165" y="502" width="130" height="40" rx="8" fill="#78350f" stroke="#fde68a" stroke-width="1.5"/>
+  <text x="1230" y="518" text-anchor="middle" font-size="9.5" fill="white">📦 Materia · papel</text>
+  <text x="1230" y="532" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">filigranas · tipografía</text>
 
-  <rect x="162" y="737" width="148" height="36" rx="8" fill="#431407" stroke="#fdba74" stroke-width="1.5"/>
-  <text x="236" y="752" text-anchor="middle" font-size="9.5" fill="white">🔍 Genealogía y variantes</text>
-  <text x="236" y="765" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Fondos antiguos</text>
+  <rect x="1165" y="572" width="130" height="40" rx="8" fill="#78350f" stroke="#fde68a" stroke-width="1.5"/>
+  <text x="1230" y="588" text-anchor="middle" font-size="9.5" fill="white">🔍 Genealogía y variantes</text>
+  <text x="1230" y="602" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Fondos antiguos</text>
+
+  <rect x="1165" y="642" width="130" height="40" rx="8" fill="#78350f" stroke="#fde68a" stroke-width="1.5"/>
+  <text x="1230" y="658" text-anchor="middle" font-size="9.5" fill="white">📜 Incunables (s.XV)</text>
+  <text x="1230" y="672" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Libros antiguos</text>
 </g>
 
-<!-- ===== BRANCH 7: Bibliografía Analítica/Crítica ===== -->
-<g class="branch" id="b7n" data-tip="Bibliografía Analítica (Naumis Peña): incluye resumen de contenido, palabras clave. Bibliografía Crítica: añade juicios de valor y comentarios. Ambas estudian el recurso como entidad intelectual (corriente norteamericana).">
-  <rect x="715" y="720" width="165" height="60" rx="12" fill="#164e63" stroke="#22d3ee" stroke-width="2" filter="url(#glow1)"/>
-  <text x="797" y="742" text-anchor="middle" font-size="9.5" fill="white">7️⃣ Tipología:</text>
-  <text x="797" y="757" text-anchor="middle" font-size="11" fill="white" font-weight="bold">Bib. Analítica · Crítica</text>
-  <text x="797" y="771" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Entidad intelectual</text>
+<!-- ===== B7: BIBLIOGRAFÍA ANALÍTICA/CRÍTICA (abajo-derecha) ===== -->
+<g class="branch" id="b7n" data-tip="Bibliografía Analítica: resumen + palabras clave. Bibliografía Crítica: juicios de valor. Enumerativa/Sistemática: organización lógica (corriente norteamericana).">
+  <rect x="860" y="763" width="170" height="58" rx="12" fill="#164e63" stroke="#22d3ee" stroke-width="2" filter="url(#gf)"/>
+  <text x="945" y="785" text-anchor="middle" font-size="9.5" fill="white">7️⃣ Tipología:</text>
+  <text x="945" y="800" text-anchor="middle" font-size="11.5" fill="white" font-weight="bold">Bib. Analítica · Crítica</text>
+  <text x="945" y="814" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Entidad intelectual</text>
 </g>
 <g id="b7l">
-  <rect x="862" y="677" width="148" height="36" rx="8" fill="#083344" stroke="#67e8f9" stroke-width="1.5"/>
-  <text x="936" y="692" text-anchor="middle" font-size="9.5" fill="white">📙 Analítica: resumen</text>
-  <text x="936" y="705" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">+ palabras clave</text>
+  <rect x="1165" y="706" width="130" height="40" rx="8" fill="#083344" stroke="#67e8f9" stroke-width="1.5"/>
+  <text x="1230" y="722" text-anchor="middle" font-size="9.5" fill="white">📙 Analítica: resumen</text>
+  <text x="1230" y="736" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">+ palabras clave</text>
 
-  <rect x="862" y="737" width="148" height="36" rx="8" fill="#083344" stroke="#67e8f9" stroke-width="1.5"/>
-  <text x="936" y="752" text-anchor="middle" font-size="9.5" fill="white">📕 Crítica: juicios</text>
-  <text x="936" y="765" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">de valor y comentarios</text>
+  <rect x="1165" y="771" width="130" height="40" rx="8" fill="#083344" stroke="#67e8f9" stroke-width="1.5"/>
+  <text x="1230" y="787" text-anchor="middle" font-size="9.5" fill="white">📕 Crítica: juicios</text>
+  <text x="1230" y="801" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">de valor y comentarios</text>
 
-  <rect x="862" y="797" width="148" height="36" rx="8" fill="#083344" stroke="#67e8f9" stroke-width="1.5"/>
-  <text x="936" y="812" text-anchor="middle" font-size="9.5" fill="white">📗 Enumerativa/Sistemática</text>
-  <text x="936" y="825" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Organización lógica</text>
+  <rect x="1165" y="842" width="130" height="40" rx="8" fill="#083344" stroke="#67e8f9" stroke-width="1.5"/>
+  <text x="1230" y="858" text-anchor="middle" font-size="9.5" fill="white">📗 Enumerativa/Sistemática</text>
+  <text x="1230" y="872" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Organización lógica</text>
 </g>
 
-<!-- ===== BRANCH 8: s.XXI Naumis Peña ===== -->
-<g class="branch" id="b8n" data-tip="Naumis Peña (2008): En el s.XXI las corrientes convergen hacia una visión holística y digital. La bibliografía se integra con la Documentación para gestionar la recuperación de información en nuevos soportes.">
-  <rect x="870" y="675" width="165" height="60" rx="12" fill="#14532d" stroke="#86efac" stroke-width="2" filter="url(#glow1)"/>
-  <text x="952" y="695" text-anchor="middle" font-size="9.5" fill="white">8️⃣ Visión s.XXI</text>
-  <text x="952" y="710" text-anchor="middle" font-size="11" fill="white" font-weight="bold">Naumis Peña (2008)</text>
-  <text x="952" y="724" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Convergencia Digital</text>
+<!-- ===== B8: VISIÓN S.XXI NAUMIS PEÑA (arriba-centro) ===== -->
+<g class="branch" id="b8n" data-tip="Naumis Peña (2008): En el s.XXI las corrientes convergen hacia una visión holística y digital. La bibliografía se integra con la Documentación para gestionar recuperación de información en nuevos soportes.">
+  <rect x="565" y="260" width="170" height="58" rx="12" fill="#14532d" stroke="#86efac" stroke-width="2" filter="url(#gf)"/>
+  <text x="650" y="282" text-anchor="middle" font-size="9.5" fill="white">8️⃣ Visión s.XXI</text>
+  <text x="650" y="297" text-anchor="middle" font-size="11.5" fill="white" font-weight="bold">Naumis Peña (2008)</text>
+  <text x="650" y="311" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Convergencia Digital</text>
 </g>
 <g id="b8l">
-  <rect x="1035" y="627" width="148" height="36" rx="8" fill="#052e16" stroke="#bbf7d0" stroke-width="1.5"/>
-  <text x="1109" y="642" text-anchor="middle" font-size="9.5" fill="white">🔗 Convergencia corrientes</text>
-  <text x="1109" y="655" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">visión holística</text>
+  <rect x="390" y="177" width="130" height="40" rx="8" fill="#052e16" stroke="#bbf7d0" stroke-width="1.5"/>
+  <text x="455" y="193" text-anchor="middle" font-size="9.5" fill="white">🔗 Convergencia corrientes</text>
+  <text x="455" y="207" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">visión holística</text>
 
-  <rect x="1035" y="694" width="148" height="36" rx="8" fill="#052e16" stroke="#bbf7d0" stroke-width="1.5"/>
-  <text x="1109" y="709" text-anchor="middle" font-size="9.5" fill="white">💻 Integración con</text>
-  <text x="1109" y="722" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Documentación digital</text>
+  <rect x="585" y="177" width="130" height="40" rx="8" fill="#052e16" stroke="#bbf7d0" stroke-width="1.5"/>
+  <text x="650" y="193" text-anchor="middle" font-size="9.5" fill="white">💻 Integración con</text>
+  <text x="650" y="207" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">Documentación digital</text>
 
-  <rect x="1035" y="757" width="148" height="36" rx="8" fill="#052e16" stroke="#bbf7d0" stroke-width="1.5"/>
-  <text x="1109" y="772" text-anchor="middle" font-size="9.5" fill="white">🗄 Recuperación info</text>
-  <text x="1109" y="785" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">en nuevos soportes</text>
+  <rect x="780" y="177" width="130" height="40" rx="8" fill="#052e16" stroke="#bbf7d0" stroke-width="1.5"/>
+  <text x="845" y="193" text-anchor="middle" font-size="9.5" fill="white">🗄 Recuperación info</text>
+  <text x="845" y="207" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)">en nuevos soportes</text>
 </g>
 
 </svg>
@@ -272,10 +272,10 @@
 <div class="legend">
   <div class="li"><div class="ld" style="background:#1d4ed8"></div>Corriente Inglesa</div>
   <div class="li"><div class="ld" style="background:#065f46"></div>Corriente Alemana</div>
-  <div class="li"><div class="ld" style="background:#92400e"></div>Corriente Norteamericana</div>
+  <div class="li"><div class="ld" style="background:#4c1d95"></div>Corriente Norteamericana</div>
+  <div class="li"><div class="ld" style="background:#7c2d12"></div>Postulados Generales</div>
   <div class="li"><div class="ld" style="background:#831843"></div>Corriente Universalista</div>
-  <div class="li"><div class="ld" style="background:#4c1d95"></div>Postulados Generales</div>
-  <div class="li"><div class="ld" style="background:#7c2d12"></div>Bib. Descriptiva</div>
+  <div class="li"><div class="ld" style="background:#92400e"></div>Bib. Descriptiva</div>
   <div class="li"><div class="ld" style="background:#164e63"></div>Bib. Analítica · Crítica</div>
   <div class="li"><div class="ld" style="background:#14532d"></div>Visión s.XXI (Naumis Peña)</div>
 </div>
